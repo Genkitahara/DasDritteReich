@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
+# Visual Studio for Mac
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Das Dritte Reich", "Assembly-CSharp.csproj", "{C68DEF13-92E2-3390-7FA5-B401CA09B954}"
 EndProject
 Global
