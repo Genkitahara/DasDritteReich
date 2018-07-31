@@ -284,6 +284,7 @@ GameObject:
   - component: {fileID: 323176250}
   - component: {fileID: 323176249}
   - component: {fileID: 323176248}
+  - component: {fileID: 323176251}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -385,6 +386,45 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 323176246}
   m_CullTransparentMesh: 0
+--- !u!114 &323176251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 323176246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a878a6ff128243dfb1d89ca0273f059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnStateChange:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: TouchScript.Gestures.Gesture+GestureEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  basicEditor: 1
+  generalProps: 0
+  limitsProps: 0
+  advancedProps: 0
+  minPointers: 0
+  maxPointers: 0
+  useSendMessage: 0
+  sendStateChangeMessages: 0
+  sendMessageTarget: {fileID: 0}
+  useUnityEvents: 0
+  sendStateChangeEvents: 0
+  requireGestureToFail: {fileID: 0}
+  friendlyGestures: []
+  OnTap:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: TouchScript.Gestures.Gesture+GestureEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  numberOfTapsRequired: 1
+  timeLimit: Infinity
+  distanceLimit: Infinity
+  combinePointers: 0
+  combinePointersInterval: 0.3
 --- !u!1 &473267075
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,7 +437,6 @@ GameObject:
   - component: {fileID: 473267078}
   - component: {fileID: 473267077}
   - component: {fileID: 473267080}
-  - component: {fileID: 473267081}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -538,19 +577,6 @@ MonoBehaviour:
   distanceLimit: Infinity
   combinePointers: 0
   combinePointersInterval: 0.3
---- !u!114 &473267081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 473267075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 520928123e26d42d0a18b135663b9898, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tapGesture: {fileID: 473267080}
-  TheaterDiscribePanel: {fileID: 1557988522}
 --- !u!1 &506953987
 GameObject:
   m_ObjectHideFlags: 0
@@ -1005,6 +1031,7 @@ GameObject:
   - component: {fileID: 1557988522}
   - component: {fileID: 1557988524}
   - component: {fileID: 1557988523}
+  - component: {fileID: 1557988525}
   m_Layer: 5
   m_Name: TheaterDiscribePanel
   m_TagString: Untagged
@@ -1031,7 +1058,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1000}
+  m_AnchoredPosition: {x: 0, y: -750}
   m_SizeDelta: {x: 800, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1557988523
@@ -1068,6 +1095,21 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1557988521}
   m_CullTransparentMesh: 0
+--- !u!114 &1557988525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1557988521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 520928123e26d42d0a18b135663b9898, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TheatertapGesture: {fileID: 473267080}
+  WarfaretapGesture: {fileID: 323176251}
+  TheaterDiscribePanel: {fileID: 1557988522}
+  nextSceneName: TheaterSelectScene
 --- !u!1 &1562838507
 GameObject:
   m_ObjectHideFlags: 0
@@ -1441,7 +1483,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2019825429}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1557988525}
+        m_MethodName: SceneLoadStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &2019825429
@@ -1641,7 +1694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5, g: 0.38915095, b: 0.38915095, a: 1}
+  m_Color: {r: 0.5, g: 0.38915095, b: 0.38915095, a: 0.3764706}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
