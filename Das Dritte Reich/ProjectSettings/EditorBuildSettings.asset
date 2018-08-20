@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TheaterSelectScene.unity
     guid: 6f2efd86d71c64a6d9ff5383747a309f
+  - enabled: 1
+    path: Assets/Scenes/TheaterMainScene.unity
+    guid: b5c7d5d392ed842acbfd64728b198db7
   m_configObjects: {}
